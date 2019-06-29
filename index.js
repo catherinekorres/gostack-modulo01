@@ -12,6 +12,7 @@ server.use(express.json());
 
 const users = ['Catherine', 'Filipe', 'Frank']; 
 
+// Read user(s)
 server.get('/users', (req, res) => {
   return res.json(users);
 });
@@ -22,6 +23,7 @@ server.get('/users/:index', (req, res) =>{
   return res.json(users[index]);
 });
 
+// Create user
 server.post('/users', (req, res) => {
   const { name } = req.body;
 
@@ -30,6 +32,7 @@ server.post('/users', (req, res) => {
   return res.json(users);
 });
 
+// Update user
 server.put('/users/:index', (req, res) => {
   const { index } = req.params;
   const { name } = req.body;
@@ -39,6 +42,7 @@ server.put('/users/:index', (req, res) => {
   return res.json(users);
 });
 
+// Delete user
 server.delete('/users/:index', (req, res) =>{
   const { index } = req.params;
 
